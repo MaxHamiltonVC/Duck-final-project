@@ -1,5 +1,4 @@
-public class RedheadDuck{
-    String name = "";
+public class RedheadDuck extends Duck{ 
     public static void main(String[] args){
 	
     }
@@ -9,32 +8,7 @@ public class RedheadDuck{
     */
     public RedheadDuck(String name){
 	this.name = name;
+	this.cname = "RedheadDuck";
     }
-    /**
-    * Prints a message stating that the duck is swimming. Includes the name
-    * of the duck.
-    * @return void.
-    */
-    public void swim(){
-       System.out.println("I am "
-			   +name+
-			  " of the ReadheadDuck class of ducks and I am swimming");
-    }
-    /**
-    * Prints a message stating that the duck is quacking. Includes the name
-    * of the duck.
-    * @return void.
-    */
-	 public void quack(){
-       System.out.println("Quack! Quack! Says "
-			   +name+
-			  " of the RedheadDuckclass of ducks");
-    }
-    /**
-    * Returns a string representation of the duck. Used for printing, etc.
-    * @return A string representing a statement of existence of this duck.
-    */
-    public String toString(){
-    return "I am a MallardDuck. My name is " + name;
-    }
+
 }
