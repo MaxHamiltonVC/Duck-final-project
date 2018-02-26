@@ -1,3 +1,4 @@
+package duck.app;
 public class DecoyDuck extends Duck{ 
     public static void main(String[] args){
 	

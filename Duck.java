@@ -1,3 +1,4 @@
+package duck.app;
 public class Duck{
     protected String name = "";
     protected String cname = "Duck";

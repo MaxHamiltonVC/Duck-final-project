@@ -1,3 +1,4 @@
+package duck.app;
 public class ModelDuck extends Duck{ 
 	private String mode = "";
     public static void main(String[] args){

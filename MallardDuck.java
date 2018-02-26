@@ -1,3 +1,4 @@
+package duck.app;
 public class MallardDuck extends Duck{ 
     public static void main(String[] args){
 	

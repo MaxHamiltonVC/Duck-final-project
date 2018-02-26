@@ -1,3 +1,4 @@
+package duck.app;
 public class DuckApp{
 public static void main(String[] args){
 	MallardDuck mally = new MallardDuck("Mally");

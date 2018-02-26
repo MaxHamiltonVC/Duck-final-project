@@ -1,3 +1,4 @@
+package duck.app;
 public class RubberDuck extends Duck{ 
     public static void main(String[] args){
 	
