@@ -12,11 +12,13 @@ public class DecoyDuck extends Duck{
 	this.cname = "DecoyDuck";
     }
     /**
-* Does nothing. Decoy ducks can't fly.
-*/
+    * Does nothing. Decoy ducks can't fly.
+	*/
+	@Override
     public void fly(){
     	    // This does nothing. Decoy ducks cannot fly.
     }
+    @Override
     public void quack(){
     	    // This does nothing. Decoy ducks cannot quack.
     }

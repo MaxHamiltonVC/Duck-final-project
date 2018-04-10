@@ -25,9 +25,9 @@ public class Duck{
 			   +name+
 			  " of the "+cname+" class of ducks");
     }
-/**
-* Prints a message saying that the duck is flying.
-*/
+	/**
+	* Prints a message saying that the duck is flying.
+	*/
     public void fly(){
     System.out.println("I am "
 			   +name+

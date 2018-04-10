@@ -12,8 +12,9 @@ public class RubberDuck extends Duck{
 	this.cname = "RubberDuck";
     }
     /**
-* Does nothing. Rubber ducks cannot fly.
-*/
+	* Does nothing. Rubber ducks cannot fly.
+	*/
+	@Override
     public void fly(){
     	    // This does nothing. Rubber ducks cannot fly.
     }
