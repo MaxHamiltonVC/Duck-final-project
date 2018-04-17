@@ -1,6 +1,7 @@
-package duck.app;
+
 public class DuckApp{
 public static void main(String[] args){
+	/**
 	MallardDuck mally = new MallardDuck("Mally");
 	System.out.println("Testing mallard duck behavior: Swimming:\n");
 	mally.swim();
@@ -54,4 +55,5 @@ public static void main(String[] args){
 	System.out.println("Testing ModelDuck behavior: Changing fly mode and flying:\n");
 	model.setFlyMode("like a swan!");
 	model.fly();
+	*/
 }}

@@ -1,5 +1,5 @@
-package duck.app;
-public class RedheadDuck extends Duck{ 
+
+public class RedheadDuck extends Duck implements CanFly,CanQuack{ 
     public static void main(String[] args){
 	
     }
@@ -11,5 +11,10 @@ public class RedheadDuck extends Duck{
 	this.name = name;
 	this.cname = "RedheadDuck";
     }
-
+    public String fly(){
+    return flyNormal();
+    }
+    public String quack(){
+    	return quackNormal();
+    }
 }

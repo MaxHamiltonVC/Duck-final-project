@@ -1,5 +1,5 @@
-package duck.app;
-public class RubberDuck extends Duck{ 
+
+public class RubberDuck extends Duck implements CanQuack{ 
     public static void main(String[] args){
 	
     }
@@ -14,9 +14,7 @@ public class RubberDuck extends Duck{
     /**
 	* Does nothing. Rubber ducks cannot fly.
 	*/
-	@Override
-    public String fly(){
-    	    // This does nothing. Rubber ducks cannot fly.
-	return "";
-    }
+	public String quack(){
+	return quackNormal();
+	}
 }

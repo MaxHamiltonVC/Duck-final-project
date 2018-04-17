@@ -1,5 +1,5 @@
-package duck.app;
-public class ModelDuck extends Duck{ 
+
+public class ModelDuck extends Duck implements CanQuack{ 
 	private String mode = "";
     public static void main(String[] args){
 	
@@ -22,6 +22,9 @@ public class ModelDuck extends Duck{
 	return("I am "
 			   +name+
 			  " of the "+cname+" and I can fly " +mode);
+    }
+    public String quack(){
+    	return quackNormal();
     }
 
 }

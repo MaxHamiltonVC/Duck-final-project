@@ -1,4 +1,4 @@
-package duck.app;
+
 public class Duck{
     protected String name = "";
     protected String cname = "Duck";
@@ -23,7 +23,7 @@ public class Duck{
     * of the duck.
     * @return void.
     */
-	 public String quack(){
+	 public String quackNormal(){
        System.out.println("Quack! Quack! Says "
 			   +name+
 			  " of the "+cname+" class of ducks");
@@ -34,7 +34,7 @@ public class Duck{
 	/**
 	* Prints a message saying that the duck is flying.
 	*/
-    public String fly(){
+    public String flyNormal(){
     System.out.println("I am "
 			   +name+
 			  " of the "+cname+" and I can Fly!");

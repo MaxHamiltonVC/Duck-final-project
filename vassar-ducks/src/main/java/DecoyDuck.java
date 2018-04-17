@@ -1,4 +1,4 @@
-package duck.app;
+
 public class DecoyDuck extends Duck{ 
     public static void main(String[] args){
 	
@@ -10,18 +10,5 @@ public class DecoyDuck extends Duck{
     public DecoyDuck(String name){
 	this.name = name;
 	this.cname = "DecoyDuck";
-    }
-    /**
-    * Does nothing. Decoy ducks can't fly.
-	*/
-	@Override
-    public String fly(){
-    	    // This does nothing. Decoy ducks cannot fly.
-return "";
-    }
-    @Override
-    public String quack(){
-    	    // This does nothing. Decoy ducks cannot quack.
-return "";
     }
 }
