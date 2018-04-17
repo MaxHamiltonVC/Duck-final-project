@@ -10,8 +10,11 @@ public class Duck{
     * of the duck.
     * @return void.
     */
-    public void swim(){
+    public String swim(){
        System.out.println("I am "
+			   +name+
+			  " of the "+cname+" class of ducks and I am swimming");
+	return ("I am "
 			   +name+
 			  " of the "+cname+" class of ducks and I am swimming");
     }
@@ -20,16 +23,22 @@ public class Duck{
     * of the duck.
     * @return void.
     */
-	 public void quack(){
+	 public String quack(){
        System.out.println("Quack! Quack! Says "
+			   +name+
+			  " of the "+cname+" class of ducks");
+	return("Quack! Quack! Says "
 			   +name+
 			  " of the "+cname+" class of ducks");
     }
 	/**
 	* Prints a message saying that the duck is flying.
 	*/
-    public void fly(){
+    public String fly(){
     System.out.println("I am "
+			   +name+
+			  " of the "+cname+" and I can Fly!");
+	return("I am "
 			   +name+
 			  " of the "+cname+" and I can Fly!");
     }

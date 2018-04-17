@@ -15,7 +15,8 @@ public class RubberDuck extends Duck{
 	* Does nothing. Rubber ducks cannot fly.
 	*/
 	@Override
-    public void fly(){
+    public String fly(){
     	    // This does nothing. Rubber ducks cannot fly.
+	return "";
     }
 }

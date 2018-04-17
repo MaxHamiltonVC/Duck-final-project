@@ -15,8 +15,11 @@ public class ModelDuck extends Duck{
     public void setFlyMode(String mode){
     this.mode = mode;
     }
-    public void fly(){
+    public String fly(){
         System.out.println("I am "
+			   +name+
+			  " of the "+cname+" and I can fly " +mode);
+	return("I am "
 			   +name+
 			  " of the "+cname+" and I can fly " +mode);
     }

@@ -15,11 +15,13 @@ public class DecoyDuck extends Duck{
     * Does nothing. Decoy ducks can't fly.
 	*/
 	@Override
-    public void fly(){
+    public String fly(){
     	    // This does nothing. Decoy ducks cannot fly.
+return "";
     }
     @Override
-    public void quack(){
+    public String quack(){
     	    // This does nothing. Decoy ducks cannot quack.
+return "";
     }
 }
