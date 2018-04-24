@@ -10,6 +10,7 @@ public class MallardDuck extends Duck implements CanFly,CanQuack{
     public MallardDuck(String name){
 	this.name = name;
 	this.cname = "MallardDuck";
+	this.id = hashCode();
     }
     public String fly(){
     return flyNormal();

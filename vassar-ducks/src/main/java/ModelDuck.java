@@ -11,6 +11,7 @@ public class ModelDuck extends Duck implements CanQuack{
     public ModelDuck(String name){
 	this.name = name;
 	this.cname = "ModelDuck";
+	this.id = hashCode();
     }
     public void setFlyMode(String mode){
     this.mode = mode;

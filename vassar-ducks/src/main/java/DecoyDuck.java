@@ -10,5 +10,6 @@ public class DecoyDuck extends Duck{
     public DecoyDuck(String name){
 	this.name = name;
 	this.cname = "DecoyDuck";
+	this.id = hashCode();
     }
 }

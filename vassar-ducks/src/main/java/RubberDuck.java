@@ -10,6 +10,7 @@ public class RubberDuck extends Duck implements CanQuack{
     public RubberDuck(String name){
 	this.name = name;
 	this.cname = "RubberDuck";
+	this.id = hashCode();
     }
     /**
 	* Does nothing. Rubber ducks cannot fly.

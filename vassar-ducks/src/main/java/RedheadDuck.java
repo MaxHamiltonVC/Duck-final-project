@@ -10,6 +10,7 @@ public class RedheadDuck extends Duck implements CanFly,CanQuack{
     public RedheadDuck(String name){
 	this.name = name;
 	this.cname = "RedheadDuck";
+	this.id = hashCode();
     }
     public String fly(){
     return flyNormal();

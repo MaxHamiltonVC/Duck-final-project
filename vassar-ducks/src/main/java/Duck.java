@@ -1,7 +1,10 @@
-
+import java.util.*;
 public class Duck{
     protected String name = "";
     protected String cname = "Duck";
+    protected int length = 1;
+    protected int id = 0;
+    
     public static void main(String[] args){
 	
     }
@@ -42,6 +45,14 @@ public class Duck{
 			   +name+
 			  " of the "+cname+" and I can Fly!");
     }
+    
+    public void setLength(int newlength){
+    length = newlength;
+    }
+    
+    public int getLength(){
+    	return length;
+    }
     /**
     * Returns a string representation of the duck. Used for printing, etc.
     * @return A string representing a statement of existence of this duck.
@@ -49,4 +60,13 @@ public class Duck{
     public String toString(){
     return "I am a "+cname+". My name is " + name;
     }
+    class SortByLength implements Comparator<Duck>{
+    public int compare(Duck a, Duck b){
+    	if(a.getLength()<b.getLength()) return -1;
+    	if(a.getLength()>b.getLength()) return 1;
+    	else return 0;
+    }
+    }
+
+    
 }
