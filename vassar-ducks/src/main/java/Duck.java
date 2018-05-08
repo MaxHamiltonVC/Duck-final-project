@@ -1,5 +1,5 @@
 import java.util.*;
-public class Duck{
+public class Duck extends DuckExperience {
     protected String name = "";
     protected String cname = "Duck";
     protected int length = 1;
