@@ -4,6 +4,8 @@ public class Duck extends DuckExperience {
     protected String cname = "Duck";
     protected int length = 1;
     protected int id = 0;
+    protected int stomach = 0;
+    protected int satiated = 50;
     
     public static void main(String[] args){
 	
