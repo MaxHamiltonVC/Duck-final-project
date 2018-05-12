@@ -3,6 +3,7 @@
  */
 public class CleanState implements ProgramState{
     Duck programDuck;
+    inputInterpreter interpreter = inputInterpreter.getInstance();
     // this represents the next state of the program (ie, where we're transitioning to after user input)
     enumState nextState = enumState.CLEAN;
     public CleanState(Duck duck){
