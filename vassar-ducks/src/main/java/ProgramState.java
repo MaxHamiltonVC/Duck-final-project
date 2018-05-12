@@ -2,6 +2,7 @@
  * Created by mhamilton on 5/8/18.
  */
 public interface ProgramState {
+    public void takeUserInput();
     public void interpretUserInput(String userInput);
     //Interactive states:
     public void feed(int foodAmount);
@@ -18,4 +19,5 @@ public interface ProgramState {
     //Post-game-end states:
     public void exit();
     public void restart();
+    public enumState getNextState();
 }

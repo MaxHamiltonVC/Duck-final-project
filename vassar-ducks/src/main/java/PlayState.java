@@ -2,7 +2,15 @@
  * Created by mhamilton on 5/8/18.
  */
 public class PlayState implements ProgramState {
+        Duck programDuck;
+        // this represents the next state of the program (ie, where we're transitioning to after user input)
+        enumState nextState = enumState.PLAY;
+        public PlayState(Duck duck){
+                programDuck = duck;
+        }
+
         public void interpretUserInput(String userInput){}
+        public void takeUserInput(){}
 
         public void feed(int foodAmount){}
         public void play(int playTime){}
@@ -18,4 +26,8 @@ public class PlayState implements ProgramState {
         //Post-game-end states:
         public void exit(){}
         public void restart(){}
+
+        public enumState getNextState(){
+                return nextState;
+        }
 }
