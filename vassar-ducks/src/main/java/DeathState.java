@@ -12,12 +12,20 @@ public class DeathState implements ProgramState{
     public void interpretUserInput(String userInput){}
     public void takeUserInput(){}
 
-    public void feed(int foodAmount){}
-    public void play(int playTime){}
-    public void educate(){}
-    public void clean(){}
-    public void sleep(int sleepTime){}
-    public void scold(){}
+    public void feed(int foodAmount){
+        System.out.println(programDuck.getName() + " is dead. They can eat no longer.");
+    }
+    public void play(int playTime){
+        System.out.println(programDuck.getName() + " is dead. They can play no longer.");}
+    public void educate(){
+        System.out.println(programDuck.getName() + " is dead. Their days of education are over.");}
+    public void clean(){
+        System.out.println(programDuck.getName() +
+                " is dead. You clean them, but it doesn't bring them back.");}
+    public void sleep(int sleepTime){
+        System.out.println(programDuck.getName() + " is dead. They're sleeping forever now, in a way.");}
+    public void scold(){
+        System.out.println(programDuck.getName() + " is dead. Haven't they suffered enough?");}
 
     //Naming/creation states:
     public void setName(String duckName){}
