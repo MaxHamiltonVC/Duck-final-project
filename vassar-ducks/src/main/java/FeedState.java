@@ -3,6 +3,7 @@
  */
 public class FeedState implements ProgramState{
         Duck programDuck;
+    inputInterpreter interpreter = inputInterpreter.getInstance();
     // this represents the next state of the program (ie, where we're transitioning to after user input)
     enumState nextState = enumState.FEED;
         public FeedState(Duck duck){
@@ -12,13 +13,9 @@ public class FeedState implements ProgramState{
         public void takeUserInput(){}
 
         public void feed(int foodAmount){
-            if(programDuck.stomach + foodAmount > programDuck.satiated){
-                System.out.println("" + programDuck.name + " can't eat that much right now!");
-            }
-            else{
-                programDuck.stomach = programDuck.stomach + foodAmount;
-                System.out.println("" + programDuck.name + " enjoyed the food, but they are still hungry!");
-            }
+            programDuck.hunger = programDuck.hunger + foodAmount;
+            System.out.println("" + programDuck.name + " enjoyed the food!");
+            
         }
         public void play(int playTime){
             System.out.println("" + programDuck.name + " doesn't want to play right now!");        

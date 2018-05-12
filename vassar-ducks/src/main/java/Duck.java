@@ -4,12 +4,31 @@ public class Duck extends DuckExperience {
     protected String cname = "Duck";
     protected int length = 1;
     protected int id = 0;
-    protected int stomach = 0;
-    protected int satiated = 50;
+    protected int sleepiness = 0; // if it gets to 100, game over
+    protected int hunger = 0; // if it gets to 100, game over
+    protected int intelligence = 0; // a desirable characteristic
+    protected int ego = 50; // if it gets to 100 or 0, game over
     
     public static void main(String[] args){
 	
     }
+
+    public int getEgo() {
+        return ego;
+    }
+
+    public int getHunger() {
+        return hunger;
+    }
+
+    public int getSleepiness() {
+        return sleepiness;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
     /**
     * Prints a message stating that the duck is swimming. Includes the name
     * of the duck.

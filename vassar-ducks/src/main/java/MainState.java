@@ -3,13 +3,17 @@
  */
 public class MainState implements ProgramState {
     Duck programDuck;
+    inputInterpreter interpreter = inputInterpreter.getInstance();
     // this represents the next state of the program (ie, where we're transitioning to after user input)
     enumState nextState = enumState.MAIN;
     public MainState(Duck duck){
         programDuck = duck;
     }
     public void interpretUserInput(String userInput){}
-    public void takeUserInput(){}
+    public void takeUserInput(){
+        System.out.println("What would you like to do with your duck?");
+
+    }
 
     public void feed(int foodAmount){}
     public void play(int playTime){}
