@@ -13,24 +13,25 @@ public class FeedState implements ProgramState{
         public void takeUserInput(){}
 
         public void feed(int foodAmount){
+            programDuck.setHunger(programDuck.getHunger() + foodAmount);
             programDuck.hunger = programDuck.hunger + foodAmount;
-            System.out.println("" + programDuck.name + " enjoyed the food!");
+            System.out.println(programDuck.getName() + " enjoyed the food!");
             
         }
         public void play(int playTime){
-            System.out.println("" + programDuck.name + " doesn't want to play right now!");        
+            System.out.println(programDuck.getName() + " doesn't want to play right now!");        
         }
         public void educate(){
-            System.out.println("" + programDuck.name + " doesn't want to learn right now!");
+            System.out.println(programDuck.getName() + " doesn't want to learn right now!");
         }
         public void clean(){
-            System.out.println("" + programDuck.name + " doesn't want to be cleaned right now!");
+            System.out.println(programDuck.getName() + " doesn't want to be cleaned right now!");
         }
         public void sleep(int sleepTime){
-            System.out.println("" + programDuck.name + " doesn't want to sleep right now!");
+            System.out.println(programDuck.getName() + " doesn't want to sleep right now!");
         }
         public void scold(){
-            System.out.println("" + programDuck.name + " won't listen right now!");
+            System.out.println(programDuck.getName() + " won't listen right now!");
         }
 
         //Naming/creation states:

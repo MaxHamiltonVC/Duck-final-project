@@ -12,12 +12,25 @@ public class CleanState implements ProgramState{
     public void interpretUserInput(String userInput){}
     public void takeUserInput(){}
 
-    public void feed(int foodAmount){}
-    public void play(int playTime){}
-    public void educate(){}
-    public void clean(){}
-    public void sleep(int sleepTime){}
-    public void scold(){}
+    public void feed(int foodAmount){
+        System.out.println(programDuck.getName() + "'s stench has made them lose their appetite.");
+    }
+    public void play(int playTime){
+        System.out.println("Judging by how " + programDuck.getName() + " smells, I think they've had enough playtime.");
+    }
+    public void educate(){
+        System.out.println("The only thing " + programDuck.getName() + " can think about is being cleaned.");
+    }
+    public void clean(){
+        programDuck.setCleanliness(programDuck.getCleanliness() + 10);
+        System.out.println(programDuck.getName() + " feels so much better!");
+    }
+    public void sleep(int sleepTime){
+        System.out.println(programDuck.getName() + " doesn't want to sleep in their filth!");
+    }
+    public void scold(){
+        System.out.println(programDuck.getName() + " can't hear you because their ears are COVERED in filth!");
+    }
 
     //Naming/creation states:
     public void setName(String duckName){}
