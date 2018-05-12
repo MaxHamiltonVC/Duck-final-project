@@ -29,6 +29,19 @@ public class Duck extends DuckExperience {
         return intelligence;
     }
 
+    public void setEgo(int newEgo){
+        ego = newEgo;
+    }
+
+    public void setSleepiness(int newSleepiness){
+        sleepiness = newSleepiness;
+    }
+    public void setIntelligence(int newIntelligence){
+        intelligence = newIntelligence;
+    }
+    public String getName(){
+        return name;
+    }
     /**
     * Prints a message stating that the duck is swimming. Includes the name
     * of the duck.
