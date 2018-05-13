@@ -13,7 +13,7 @@ public static void main(String[] args){
 		// and have it decide internally what to do from there.
 		duckState = switchState(duckState,duckState.getNextState(),programDuck);
 		duckState.takeUserInput();
-
+		programRunning = (duckState.getNextState()!=enumState.EXIT); // checks if program should end
 	}
 }
 	private static ProgramState switchState(ProgramState currentState, enumState newState, Duck duck){

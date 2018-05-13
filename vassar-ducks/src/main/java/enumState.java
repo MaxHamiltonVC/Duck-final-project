@@ -7,5 +7,6 @@ public enum enumState{
     NAME,
     PLAY,
     SCOLD,
-    SLEEP
+    SLEEP,
+    EXIT
 }

@@ -35,7 +35,9 @@ public class NameState implements ProgramState {
     public void setType(String duckType){} //change to ENUM type?
 
     //Post-game-end states:
-    public void exit(){}
+    public void exit(){
+        System.out.println("Exiting the duck parenting simulator...");
+        nextState = enumState.EXIT;}
     public void restart(){}
 
     public enumState getNextState(){
