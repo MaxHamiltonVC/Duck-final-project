@@ -27,7 +27,10 @@ public class SleepState implements ProgramState {
     public void exit(){
         System.out.println("Exiting the duck parenting simulator...");
         nextState = enumState.EXIT;}
-    public void restart(){}
+    public void restart(){
+        nextState = enumState.NAME;
+        programDuck = new Duck();
+    }
 
     public enumState getNextState(){
         return nextState;
