@@ -59,6 +59,8 @@ public class SleepState implements ProgramState {
                 }
                 break;
             default:
+                System.out.println("Input not recognized. Type 'help' for a list of possible commands.");
+                break;
 
         }
     }
