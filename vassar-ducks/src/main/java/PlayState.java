@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by mhamilton on 5/8/18.
  */
@@ -10,7 +12,60 @@ public class PlayState implements ProgramState {
                 programDuck = duck;
         }
 
-        public void interpretUserInput(String userInput){}
+        public void interpretUserInput(String userInput){
+                enumUserAction processedInput = interpreter.interpret(userInput);
+                Scanner inputGatherer = new Scanner(System.in);
+                switch(processedInput){
+                        case EDUCATE:
+                                educate();
+                                break;
+                        case SLEEP:
+                                sleep(0);
+                                break;
+                        case SCOLD:
+                                scold();
+                                break;
+                        case CLEAN:
+                                clean();
+                                break;
+                        case PLAY:
+                                System.out.println("How long would you like to sleep for?");
+                                boolean improperInput = true;
+                                int playInput = 0;
+                                while(improperInput){
+                                        try{
+                                                playInput = inputGatherer.nextInt();
+                                                improperInput = false;
+                                        }
+                                        catch(Exception e){
+                                                System.out.println("Improper input--please type in an integer value.");
+                                        }
+                                }
+                                sleep(playInput);
+                                break;
+                        case MAIN:
+                                nextState = enumState.MAIN;
+                                break;
+                        case FEED:
+                                feed(0);
+                                break;
+                        case EXIT:
+                                exit();
+                                break;
+                        case RESTART:
+                                System.out.println("Are you sure you want to restart the duck app with a whole new duck?"
+                                        + programDuck.getName()+" will be lost forever!");
+                                if(interpreter.interpret(inputGatherer.next())==enumUserAction.YES){
+                                        System.out.println("Restarting the duck app! Say goodbye to "+programDuck.getName()+"...");
+                                        restart();
+                                }
+                                break;
+                        default:
+                                System.out.println("Input not recognized. Type 'help' for a list of possible commands.");
+                                break;
+
+                }
+        }
         public void takeUserInput(){}
 
         public void feed(int foodAmount){}
