@@ -12,15 +12,26 @@ public class NameState implements ProgramState {
     public void interpretUserInput(String userInput){}
     public void takeUserInput(){}
 
-    public void feed(int foodAmount){}
-    public void play(int playTime){}
-    public void educate(){}
-    public void clean(){}
-    public void sleep(int sleepTime){}
-    public void scold(){}
+    public void feed(int foodAmount){
+        System.out.println("You should name your duck before you try to do that.");
+    }
+    public void play(int playTime){
+        System.out.println("You should name your duck before you try to do that.");}
+    public void educate(){
+        System.out.println("You should name your duck before you try to do that.");}
+    public void clean(){
+        System.out.println("You should name your duck before you try to do that.");}
+    public void sleep(int sleepTime){
+        System.out.println("You should name your duck before you try to do that.");}
+    public void scold(){
+        System.out.println("You should name your duck before you try to do that.");}
 
     //Naming/creation states:
-    public void setName(String duckName){}
+    public void setName(String duckName){
+        programDuck.setName(duckName);
+        System.out.println("Done! Your duck's name is now "+duckName+".");
+        nextState = enumState.MAIN;
+    }
     public void setType(String duckType){} //change to ENUM type?
 
     //Post-game-end states:

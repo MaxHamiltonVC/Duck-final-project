@@ -55,6 +55,9 @@ public class Duck extends DuckExperience {
     public String getName(){
         return name;
     }
+    public void setName(String newName){
+        name = newName;
+    }
     /**
     * Prints a message stating that the duck is swimming. Includes the name
     * of the duck.
