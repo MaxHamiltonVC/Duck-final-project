@@ -25,7 +25,7 @@ public class DeathState implements ProgramState{
                 scold();
                 break;
             case CLEAN:
-                clean();
+                clean(0);
                 break;
             case PLAY:
                 play(0);
@@ -68,7 +68,7 @@ public class DeathState implements ProgramState{
         System.out.println(programDuck.getName() + " is dead. They can play no longer.");}
     public void educate(){
         System.out.println(programDuck.getName() + " is dead. Their days of education are over.");}
-    public void clean(){
+    public void clean(int cleanTime){
         System.out.println(programDuck.getName() +
                 " is dead. You clean them, but it doesn't bring them back.");}
     public void sleep(int sleepTime){

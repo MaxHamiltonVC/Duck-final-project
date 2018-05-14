@@ -26,7 +26,7 @@ public class PlayState implements ProgramState {
                                 scold();
                                 break;
                         case CLEAN:
-                                clean();
+                                clean(0);
                                 break;
                         case PLAY:
                                 System.out.println("How long would you like to play for?");
@@ -74,7 +74,7 @@ public class PlayState implements ProgramState {
         public void feed(int foodAmount){}
         public void play(int playTime){}
         public void educate(){}
-        public void clean(){}
+        public void clean(int cleanTime){}
         public void sleep(int sleepTime){}
         public void scold(){}
 

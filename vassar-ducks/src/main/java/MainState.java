@@ -25,7 +25,7 @@ public class MainState implements ProgramState {
                 scold();
                 break;
             case CLEAN:
-                clean();
+                clean(0);
                 break;
             case PLAY:
                 play(0);
@@ -66,7 +66,7 @@ public class MainState implements ProgramState {
     public void educate(){
         nextState = enumState.EDUCATE;
     }
-    public void clean(){
+    public void clean(int cleanTime){
         nextState = enumState.CLEAN;
     }
     public void sleep(int sleepTime){

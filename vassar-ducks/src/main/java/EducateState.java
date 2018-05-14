@@ -15,7 +15,7 @@ public class EducateState implements ProgramState{
     public void feed(int foodAmount){}
     public void play(int playTime){}
     public void educate(){}
-    public void clean(){}
+    public void clean(int cleanTime){}
     public void sleep(int sleepTime){}
     public void scold(){}
 

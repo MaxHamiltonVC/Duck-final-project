@@ -2,17 +2,17 @@
  * Created by mhamilton on 5/8/18.
  */
 import java.util.Scanner;
-public class FeedState implements ProgramState{
-       
+public class FeedState implements ProgramState{  
     Duck programDuck;
-        int feedInput = 0;
+    int feedInput = 0;
     inputInterpreter interpreter = inputInterpreter.getInstance();
     // this represents the next state of the program (ie, where we're transitioning to after user input)
     enumState nextState = enumState.FEED;
     Scanner inputGatherer = new Scanner(System.in);
-        public FeedState(Duck duck){
+    
+    public FeedState(Duck duck){
                 programDuck = duck;
-        }
+    }
     public void interpretUserInput(String userInput){
         enumUserAction processedInput = interpreter.interpret(userInput);
         switch(processedInput){
@@ -26,7 +26,7 @@ public class FeedState implements ProgramState{
                 scold();
                 break;
             case CLEAN:
-                clean();
+                clean(0);
                 break;
             case PLAY:
                 play(0);
@@ -52,7 +52,8 @@ public class FeedState implements ProgramState{
                 System.out.println("Input not recognized. Type 'help' for a list of possible commands.");
                 break;
         }
-    }public void takeUserInput(){        System.out.println("How many grams of food would you like to feed your duck?");
+    }
+    public void takeUserInput(){        System.out.println("How many grams of food would you like to feed your duck?");
         boolean improperInput = true;
         feedInput = 0;
         String sleepStringInput = "";
@@ -76,20 +77,19 @@ public class FeedState implements ProgramState{
         programDuck.setHunger(programDuck.getHunger() + foodAmount);
         programDuck.hunger = programDuck.hunger + foodAmount;
         System.out.println(programDuck.getName() + " enjoyed the food!");
-
     }
     public void play(int playTime){
         System.out.println(programDuck.getName() + " doesn't want to play right now!");        
-    }
+    }    
     public void educate(){
         System.out.println(programDuck.getName() + " doesn't want to learn right now!");
-    }
-    public void clean(){
+    }   
+    public void clean(int cleanTime){
         System.out.println(programDuck.getName() + " doesn't want to be cleaned right now!");
-    }
+    } 
     public void sleep(int sleepTime){
         System.out.println(programDuck.getName() + " doesn't want to sleep right now!");
-    }
+    }    
     public void scold(){
         System.out.println(programDuck.getName() + " won't listen right now!");
     }

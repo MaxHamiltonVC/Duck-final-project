@@ -24,7 +24,7 @@ public class ScoldState implements ProgramState {
                 scold();
                 break;
             case CLEAN:
-                clean();
+                clean(0);
                 break;
             case PLAY:
                 play(0);
@@ -66,7 +66,7 @@ public class ScoldState implements ProgramState {
     public void educate(){
         System.out.println("" + programDuck.name + " doesn't want to learn right now!");
     }
-    public void clean(){
+    public void clean(int cleanTime){
         System.out.println("" + programDuck.name + " doesn't want to be cleaned right now!");
     }
     public void sleep(int sleepTime){

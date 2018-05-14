@@ -3,6 +3,7 @@
  */
 import java.util.Scanner;
 public class CleanState implements ProgramState{
+    int cleanInput = 0;
     Duck programDuck;
     inputInterpreter interpreter = inputInterpreter.getInstance();
     Scanner inputGatherer = new Scanner(System.in);
@@ -24,7 +25,7 @@ public class CleanState implements ProgramState{
                 scold();
                 break;
             case CLEAN:
-                clean();
+                clean(0);
                 break;
             case PLAY:
                 play(0);
@@ -53,7 +54,24 @@ public class CleanState implements ProgramState{
         }
     }
     public void takeUserInput(){
-        clean();
+        System.out.println("How long would you like to clean for? (In minutes)");
+        boolean improperInput = true;
+        cleanInput = 0;
+        String cleanStringInput = "";
+        while(improperInput){
+            try{
+                cleanStringInput = inputGatherer.next();
+                cleanInput = Integer.parseInt(cleanStringInput);
+                improperInput = false;
+            }
+            catch(Exception e){
+                interpretUserInput(cleanStringInput);
+                System.out.println("Improper input--please type in an integer value to clean (or exit"
+                +", help, main, or restart).");
+            }
+        }
+        clean(cleanInput);
+        nextState = enumState.MAIN;
     }
 
     public void feed(int foodAmount){
@@ -65,8 +83,8 @@ public class CleanState implements ProgramState{
     public void educate(){
         System.out.println("The only thing " + programDuck.getName() + " can think about is being cleaned.");
     }
-    public void clean(){
-        programDuck.setCleanliness(programDuck.getCleanliness() + 10);
+    public void clean(int cleanTime){
+        programDuck.setCleanliness(programDuck.getCleanliness() + cleanTime);
         System.out.println(programDuck.getName() + " looks cleaner!");
         nextState = enumState.MAIN;
     }

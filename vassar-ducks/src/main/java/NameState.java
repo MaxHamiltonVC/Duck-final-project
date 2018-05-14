@@ -27,7 +27,7 @@ public class NameState implements ProgramState {
                 scold();
                 break;
             case CLEAN:
-                clean();
+                clean(0);
                 break;
             case PLAY:
                 play(0);
@@ -72,7 +72,7 @@ public class NameState implements ProgramState {
         System.out.println("You should name your duck before you try to do that.");}
     public void educate(){
         System.out.println("You should name your duck before you try to do that.");}
-    public void clean(){
+    public void clean(int cleanTime){
         System.out.println("You should name your duck before you try to do that.");}
     public void sleep(int sleepTime){
         System.out.println("You should name your duck before you try to do that.");}
