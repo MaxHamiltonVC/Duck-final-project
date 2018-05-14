@@ -35,7 +35,7 @@ public class FeedState implements ProgramState{
                 nextState = enumState.MAIN;
                 break;
             case FEED:
-                System.out.println("You're alread feeding the duck!");
+                System.out.println("You're already feeding the duck!");
                 break;
             case EXIT:
                 exit();

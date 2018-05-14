@@ -25,7 +25,7 @@ public class CleanState implements ProgramState{
                 scold();
                 break;
             case CLEAN:
-                clean(0);
+                System.out.println("You're already cleaning the duck!");
                 break;
             case PLAY:
                 play(0);
