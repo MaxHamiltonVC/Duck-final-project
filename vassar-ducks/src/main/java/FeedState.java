@@ -3,15 +3,16 @@
  */
 import java.util.Scanner;
 public class FeedState implements ProgramState{
-    int foodAmount = 0;
+       
     Duck programDuck;
-    Scanner inputGatherer = new Scanner(System.in);
+        int feedInput = 0;
     inputInterpreter interpreter = inputInterpreter.getInstance();
     // this represents the next state of the program (ie, where we're transitioning to after user input)
     enumState nextState = enumState.FEED;
-    public FeedState(Duck duck){
-        programDuck = duck;
-    }
+    Scanner inputGatherer = new Scanner(System.in);
+        public FeedState(Duck duck){
+                programDuck = duck;
+        }
     public void interpretUserInput(String userInput){
         enumUserAction processedInput = interpreter.interpret(userInput);
         switch(processedInput){
@@ -34,7 +35,7 @@ public class FeedState implements ProgramState{
                 nextState = enumState.MAIN;
                 break;
             case FEED:
-                feed(0);
+                System.out.println("You're alread feeding the duck!");
                 break;
             case EXIT:
                 exit();
@@ -51,26 +52,23 @@ public class FeedState implements ProgramState{
                 System.out.println("Input not recognized. Type 'help' for a list of possible commands.");
                 break;
         }
-    }
-    public void takeUserInput(){
-        System.out.println("How much would you like to feed your duck?");
+    }public void takeUserInput(){        System.out.println("How many grams of food would you like to feed your duck?");
         boolean improperInput = true;
-        foodAmount = 0;
-        String foodAmountString = "";
+        feedInput = 0;
+        String sleepStringInput = "";
         while(improperInput){
             try{
-                foodAmountString = inputGatherer.next();
-                foodAmount = Integer.parseInt(foodAmountString);
+                sleepStringInput = inputGatherer.next();
+                feedInput = Integer.parseInt(sleepStringInput);
                 improperInput = false;
             }
             catch(Exception e){
-                interpretUserInput(foodAmountString);
-                System.out.println("Improper input--please type in an integer value (or exit"
-                +", help, main, or restart).");
+                interpretUserInput(sleepStringInput);
+                System.out.println("Improper input--please type in an integer value to sleep (or exit"
+                        +", help, main, or restart).");
             }
         }
-
-        feed(foodAmount);
+        feed(feedInput);
         nextState = enumState.MAIN;
     }
 
