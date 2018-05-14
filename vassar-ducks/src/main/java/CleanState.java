@@ -1,16 +1,60 @@
 /**
  * Created by mhamilton on 5/8/18.
  */
+import java.util.Scanner;
 public class CleanState implements ProgramState{
     Duck programDuck;
     inputInterpreter interpreter = inputInterpreter.getInstance();
+    Scanner inputGatherer = new Scanner(System.in);
     // this represents the next state of the program (ie, where we're transitioning to after user input)
     enumState nextState = enumState.CLEAN;
     public CleanState(Duck duck){
         programDuck = duck;
     }
-    public void interpretUserInput(String userInput){}
-    public void takeUserInput(){}
+    public void interpretUserInput(String userInput){
+        enumUserAction processedInput = interpreter.interpret(userInput);
+        switch(processedInput){
+            case EDUCATE:
+                educate();
+                break;
+            case SLEEP:
+                sleep(0);
+                break;
+            case SCOLD:
+                scold();
+                break;
+            case CLEAN:
+                clean();
+                break;
+            case PLAY:
+                play(0);
+                break;
+            case MAIN:
+                nextState = enumState.MAIN;
+                break;
+            case FEED:
+                feed(0);
+                break;
+            case EXIT:
+                exit();
+                break;
+            case RESTART:
+                System.out.println("Are you sure you want to restart the duck app with a whole new duck?"
+                        + programDuck.getName()+" will be lost forever!");
+                if(interpreter.interpret(inputGatherer.next())==enumUserAction.YES){
+                    System.out.println("Restarting the duck app! Say goodbye to "+programDuck.getName()+"...");
+                    restart();
+                }
+                break;
+            default:
+                System.out.println("Input not recognized. Type 'help' for a list of possible commands.");
+                break;
+
+        }
+    }
+    public void takeUserInput(){
+        clean();
+    }
 
     public void feed(int foodAmount){
         System.out.println(programDuck.getName() + "'s stench has made them lose their appetite.");
@@ -23,7 +67,8 @@ public class CleanState implements ProgramState{
     }
     public void clean(){
         programDuck.setCleanliness(programDuck.getCleanliness() + 10);
-        System.out.println(programDuck.getName() + " feels so much better!");
+        System.out.println(programDuck.getName() + " looks cleaner!");
+        nextState = enumState.MAIN;
     }
     public void sleep(int sleepTime){
         System.out.println(programDuck.getName() + " doesn't want to sleep in their filth!");
