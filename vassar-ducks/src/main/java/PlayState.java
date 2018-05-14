@@ -118,4 +118,4 @@ public class PlayState implements ProgramState {
         public enumState getNextState(){
                 return nextState;
         }
-}
+} 
