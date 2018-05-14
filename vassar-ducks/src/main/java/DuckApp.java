@@ -9,6 +9,9 @@ public static void main(String[] args){
 	enumState currentState = enumState.NAME;
 
 	while(programRunning){
+		// actually this needs to be changed--the interpretation of user input should happen in this class,
+		// and the fulfillment of that input should be different by state. PLEASE change!
+
 		// the main loop: go into the intended next state, then run that state's user input protocol
 		// and have it decide internally what to do from there.
 		duckState = switchState(duckState,duckState.getNextState(),programDuck);
