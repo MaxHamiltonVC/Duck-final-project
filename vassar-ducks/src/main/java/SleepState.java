@@ -3,7 +3,9 @@
  */
 import java.util.Scanner;
 public class SleepState implements ProgramState {
+    int sleepInput = 0;
     Duck programDuck;
+    Scanner inputGatherer = new Scanner(System.in);
     inputInterpreter interpreter = inputInterpreter.getInstance();
     // this represents the next state of the program (ie, where we're transitioning to after user input)
     enumState nextState = enumState.SLEEP;
@@ -12,25 +14,12 @@ public class SleepState implements ProgramState {
     }
     public void interpretUserInput(String userInput){
         enumUserAction processedInput = interpreter.interpret(userInput);
-        Scanner inputGatherer = new Scanner(System.in);
         switch(processedInput){
             case EDUCATE:
                 educate();
                 break;
             case SLEEP:
-                System.out.println("How long would you like to sleep for?");
-                boolean improperInput = true;
-                int sleepInput = 0;
-                while(improperInput){
-                    try{
-                        sleepInput = inputGatherer.nextInt();
-                        improperInput = false;
-                    }
-                    catch(Exception e){
-                        System.out.println("Improper input--please type in an integer value.");
-                    }
-                }
-                sleep(sleepInput);
+                System.out.println("You're already sleeping! Enter an integer value for how long.");
                 break;
             case SCOLD:
                 scold();
@@ -64,7 +53,26 @@ public class SleepState implements ProgramState {
 
         }
     }
-    public void takeUserInput(){}
+    public void takeUserInput(){
+        System.out.println("How long would you like to sleep for?");
+        boolean improperInput = true;
+        sleepInput = 0;
+        while(improperInput){
+            try{
+                String sleepStringInput = inputGatherer.next();
+                interpretUserInput(sleepStringInput);
+                sleepInput = Integer.parseInt(sleepStringInput);
+                improperInput = false;
+            }
+            catch(Exception e){
+                System.out.println("Improper input--please type in an integer value to sleep (or exit"
+                +", help, main, or restart).");
+            }
+        }
+        sleep(sleepInput);
+        nextState = enumState.MAIN;
+
+    }
 
     public void feed(int foodAmount){}
     public void play(int playTime){}

@@ -52,7 +52,9 @@ public class ScoldState implements ProgramState {
 
         }
     }
-    public void takeUserInput(){}
+    public void takeUserInput(){
+        interpretUserInput("scold");
+    }
 
     public void feed(int foodAmount){
         System.out.println(programDuck.getName() + " doesn't want to be fed right now!");

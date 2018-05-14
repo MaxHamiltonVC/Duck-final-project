@@ -1,6 +1,6 @@
 import java.util.*;
 public class Duck extends DuckExperience {
-    protected String name = "";
+    protected String name = "your unnamed duck";
     protected String cname = "Duck";
     protected int length = 1;
     protected int id = 0;

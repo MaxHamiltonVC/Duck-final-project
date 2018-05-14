@@ -41,7 +41,8 @@ public class PlayState implements ProgramState {
                                                 System.out.println("Improper input--please type in an integer value.");
                                         }
                                 }
-                                sleep(playInput);
+                                play(playInput);
+                                nextState = enumState.MAIN;
                                 break;
                         case MAIN:
                                 nextState = enumState.MAIN;
@@ -66,7 +67,9 @@ public class PlayState implements ProgramState {
 
                 }
         }
-        public void takeUserInput(){}
+        public void takeUserInput(){
+                interpretUserInput("play");
+        }
 
         public void feed(int foodAmount){}
         public void play(int playTime){}
