@@ -40,13 +40,17 @@ public class CleanState implements ProgramState{
                 exit();
                 break;
             case RESTART:
-                System.out.println("Are you sure you want to restart the duck app with a whole new duck?"
+                System.out.println("Are you sure you want to restart the duck app with a whole new duck? "
                         + programDuck.getName()+" will be lost forever!");
                 if(interpreter.interpret(inputGatherer.next())==enumUserAction.YES){
                     System.out.println("Restarting the duck app! Say goodbye to "+programDuck.getName()+"...");
                     restart();
                 }
                 break;
+            case HELP:
+                System.out.println("Commands include: ");
+                System.out.println("Educated, sleep, scold, clean, play, main, feed, exit, and restart.");
+                break;          
             default:
                 System.out.println("Input not recognized. Type 'help' for a list of possible commands.");
                 break;

@@ -48,6 +48,10 @@ public class DeathState implements ProgramState{
                     restart();
                 }
                 break;
+            case HELP:
+                System.out.println("Commands include: ");
+                System.out.println("Educated, sleep, scold, clean, play, main, feed, exit, and restart.");
+                break;
             default:
                 System.out.println("Input not recognized. Type 'help' for a list of possible commands.");
                 break;
