@@ -17,7 +17,6 @@ public class PlayState implements ProgramState {
 
         public void interpretUserInput(String userInput){
                 enumUserAction processedInput = interpreter.interpret(userInput);
-                //Scanner inputGatherer = new Scanner(System.in);
                 switch(processedInput){
                         case EDUCATE:
                                 educate();
@@ -32,20 +31,6 @@ public class PlayState implements ProgramState {
                                 clean(0);
                                 break;
                         case PLAY:
-                                /*System.out.println("How long would you like to play for?");
-                                boolean improperInput = true;
-                                int playInput = 0;
-                                while(improperInput){
-                                        try{
-                                                playInput = inputGatherer.nextInt();
-                                                improperInput = false;
-                                        }
-                                        catch(Exception e){
-                                                System.out.println("Improper input--please type in an integer value.");
-                                        }
-                                }
-                                play(playInput);
-                                nextState = enumState.MAIN;*/
                                 System.out.println("You're already playing with the duck!");
                                 break;
                         case MAIN:
@@ -90,22 +75,35 @@ public class PlayState implements ProgramState {
             }
             play(playInput);
             nextState = enumState.MAIN;
-                //interpretUserInput("play");
         }
 
-        public void feed(int foodAmount){}
+        public void feed(int foodAmount){
+            System.out.println(programDuck.getName() + " doesn't want to be fed right now!");
+        }
         public void play(int playTime){
             programDuck.setHappiness(programDuck.getHappiness() + playInput);
             System.out.println(programDuck.getName() + " had a lot of fun!");
         }
-        public void educate(){}
-        public void clean(int cleanTime){}
-        public void sleep(int sleepTime){}
-        public void scold(){}
+        public void educate(){
+            System.out.println(programDuck.getName() + " doesn't want to learn right now!");
+        }
+        public void clean(int cleanTime){
+            System.out.println(programDuck.getName() + " doesn't want to be cleaned right now!");
+        }
+        public void sleep(int sleepTime){
+            System.out.println(programDuck.getName() + " doesn't want to sleep right now!");
+        }
+        public void scold(){
+            System.out.println(programDuck.getName() + " won't listen right now!");
+        }
 
         //Naming/creation states:
-        public void setName(String duckName){}
-        public void setType(String duckType){} //change to ENUM type?
+        public void setName(String duckName){
+            System.out.println("You can't do that right now!");
+        }
+        public void setType(String duckType){ //change to ENUM type?
+            System.out.println("You can't do that right now!");
+        }
 
         //Post-game-end states:
         public void exit(){
