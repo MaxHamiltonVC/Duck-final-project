@@ -57,14 +57,15 @@ public class SleepState implements ProgramState {
         System.out.println("How long would you like to sleep for?");
         boolean improperInput = true;
         sleepInput = 0;
+        String sleepStringInput = "";
         while(improperInput){
             try{
-                String sleepStringInput = inputGatherer.next();
-                interpretUserInput(sleepStringInput);
+                sleepStringInput = inputGatherer.next();
                 sleepInput = Integer.parseInt(sleepStringInput);
                 improperInput = false;
             }
             catch(Exception e){
+                interpretUserInput(sleepStringInput);
                 System.out.println("Improper input--please type in an integer value to sleep (or exit"
                 +", help, main, or restart).");
             }

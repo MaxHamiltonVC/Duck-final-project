@@ -57,6 +57,7 @@ public class NameState implements ProgramState {
         }
     }
     public void takeUserInput(){
+        System.out.println("Welcome to the duck parenting simulator. What would you like to name your duck?");
         Scanner inputGatherer = new Scanner(System.in);
         while(unnamed){
             duckName = inputGatherer.next();

@@ -76,7 +76,7 @@ public class ScoldState implements ProgramState {
         System.out.println("What would you like to say to scold your duck?");
         // the harshness of the scolding is based on the length of the message.
         Scanner sc = new Scanner(System.in);
-        String message = sc.next();
+        String message = sc.nextLine();
         programDuck.setEgo(programDuck.getEgo() - (message.length()/5));
         if(programDuck.getEgo()<20){
             System.out.println(programDuck.getName() + " seems sad and dejected.");
@@ -92,7 +92,7 @@ public class ScoldState implements ProgramState {
             System.out.println(programDuck.getName() + " is totally unfazed by anything you've said.");}
             System.out.println("Would you like to scold "+programDuck.getName()+ " again?");
         while(true){
-            String again = sc.next();
+            String again = sc.nextLine();
             if(interpreter.interpret(again)==enumUserAction.YES){
                 scold();
                 break;

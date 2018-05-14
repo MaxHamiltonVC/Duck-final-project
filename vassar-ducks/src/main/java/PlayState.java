@@ -29,7 +29,7 @@ public class PlayState implements ProgramState {
                                 clean();
                                 break;
                         case PLAY:
-                                System.out.println("How long would you like to sleep for?");
+                                System.out.println("How long would you like to play for?");
                                 boolean improperInput = true;
                                 int playInput = 0;
                                 while(improperInput){
