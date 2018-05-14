@@ -16,6 +16,7 @@ public static void main(String[] args){
 		// and have it decide internally what to do from there.
 		duckState = switchState(duckState,duckState.getNextState(),programDuck);
 		duckState.takeUserInput();
+		duckState.checkForDeath(); // checks if we should move to the death state
 		programRunning = (duckState.getNextState()!=enumState.EXIT); // checks if program should end
 	}
 }

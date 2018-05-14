@@ -95,5 +95,6 @@ public class MainState implements ProgramState {
     public enumState getNextState(){
         return nextState;
     }
+    public void checkForDeath(){};
 }
 

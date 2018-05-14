@@ -20,4 +20,5 @@ public interface ProgramState {
     public void exit();
     public void restart();
     public enumState getNextState();
+    public void checkForDeath();
 }

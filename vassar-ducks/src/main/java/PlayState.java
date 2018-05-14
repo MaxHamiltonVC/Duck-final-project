@@ -119,4 +119,11 @@ public class PlayState implements ProgramState {
     public enumState getNextState(){
             return nextState;
     }
+    public void checkForDeath(){
+        if(programDuck.getEgo()<0||programDuck.getEgo()>100||programDuck.getCleanliness()<0
+                ||programDuck.getHappiness()<0||programDuck.getHunger()>100||programDuck.getSleepiness()>100){
+            //these are all the conditions for the duck dying (as laid out in the duck class' comments)
+            nextState = enumState.DEATH;
+        }
+    }
 } 
