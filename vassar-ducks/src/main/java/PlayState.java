@@ -5,16 +5,19 @@ import java.util.Scanner;
  */
 public class PlayState implements ProgramState {
         Duck programDuck;
+        int playInput = 0;
         inputInterpreter interpreter = inputInterpreter.getInstance();
         // this represents the next state of the program (ie, where we're transitioning to after user input)
         enumState nextState = enumState.PLAY;
+        Scanner inputGatherer = new Scanner(System.in);
+        
         public PlayState(Duck duck){
                 programDuck = duck;
         }
 
         public void interpretUserInput(String userInput){
                 enumUserAction processedInput = interpreter.interpret(userInput);
-                Scanner inputGatherer = new Scanner(System.in);
+                //Scanner inputGatherer = new Scanner(System.in);
                 switch(processedInput){
                         case EDUCATE:
                                 educate();
@@ -29,7 +32,7 @@ public class PlayState implements ProgramState {
                                 clean(0);
                                 break;
                         case PLAY:
-                                System.out.println("How long would you like to play for?");
+                                /*System.out.println("How long would you like to play for?");
                                 boolean improperInput = true;
                                 int playInput = 0;
                                 while(improperInput){
@@ -42,7 +45,8 @@ public class PlayState implements ProgramState {
                                         }
                                 }
                                 play(playInput);
-                                nextState = enumState.MAIN;
+                                nextState = enumState.MAIN;*/
+                                System.out.println("You're already playing with the duck!");
                                 break;
                         case MAIN:
                                 nextState = enumState.MAIN;
@@ -68,11 +72,32 @@ public class PlayState implements ProgramState {
                 }
         }
         public void takeUserInput(){
-                interpretUserInput("play");
+            System.out.println("How long would you like to play with your duck? (In minutes)");
+            boolean improperInput = true;
+            playInput = 0;
+            String playStringInput = "";
+            while(improperInput){
+                try{
+                    playStringInput = inputGatherer.next();
+                    playInput = Integer.parseInt(playStringInput);
+                    improperInput = false;
+                }
+                catch(Exception e){
+                    interpretUserInput(playStringInput);
+                    System.out.println("Improper input--please type in an integer value (or exit"
+                            +", help, main, or restart).");
+                }
+            }
+            play(playInput);
+            nextState = enumState.MAIN;
+                //interpretUserInput("play");
         }
 
         public void feed(int foodAmount){}
-        public void play(int playTime){}
+        public void play(int playTime){
+            programDuck.setHappiness(programDuck.getHappiness() + playInput);
+            System.out.println(programDuck.getName() + " had a lot of fun!");
+        }
         public void educate(){}
         public void clean(int cleanTime){}
         public void sleep(int sleepTime){}

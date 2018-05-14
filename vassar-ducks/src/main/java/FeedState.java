@@ -53,7 +53,8 @@ public class FeedState implements ProgramState{
                 break;
         }
     }
-    public void takeUserInput(){        System.out.println("How many grams of food would you like to feed your duck?");
+    public void takeUserInput(){        
+        System.out.println("How many grams of food would you like to feed your duck?");
         boolean improperInput = true;
         feedInput = 0;
         String sleepStringInput = "";
@@ -75,7 +76,6 @@ public class FeedState implements ProgramState{
 
     public void feed(int foodAmount){
         programDuck.setHunger(programDuck.getHunger() + foodAmount);
-        programDuck.hunger = programDuck.hunger + foodAmount;
         System.out.println(programDuck.getName() + " enjoyed the food!");
     }
     public void play(int playTime){

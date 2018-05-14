@@ -56,7 +56,7 @@ public class DeathState implements ProgramState{
     }
     public void takeUserInput(){
         System.out.println("Alas, your duck is dead. Don't cry--even the best duck parents aren't perfect."
-        +" To commemorate your duck's legacy, please enter an epitaph for them, to b e stored forever:");
+        +" To commemorate your duck's legacy, please enter an epitaph for them, to be stored forever:");
         epitaph = inputGatherer.next();
         interpretUserInput(epitaph);
     }

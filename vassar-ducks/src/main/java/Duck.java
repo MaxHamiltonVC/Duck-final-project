@@ -9,11 +9,16 @@ public class Duck extends DuckExperience {
     protected int intelligence = 0; // a desirable characteristic
     protected int ego = 50; // if it gets to 100 or 0, game over
     protected int cleanliness = 50; // if it gets to 0, game over
+    protected int happiness = 50; // if it gets to 0, game over
     
     public static void main(String[] args){
 	
     }
 
+    public int getHappiness(){
+        return happiness;
+    }
+    
     public int getCleanliness(){
         return cleanliness;
     }
@@ -34,6 +39,10 @@ public class Duck extends DuckExperience {
         return intelligence;
     }
 
+    public void setHappiness(int newHappiness){
+        happiness = newHappiness;
+    }
+    
     public void setCleanliness(int newCleanliness){
         cleanliness = newCleanliness;
     }
