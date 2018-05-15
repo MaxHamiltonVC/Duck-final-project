@@ -1,3 +1,3 @@
-public interface CanQuack{
-public String quack();
+interface CanQuack{
+String quack();
 }

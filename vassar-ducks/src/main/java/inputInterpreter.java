@@ -1,7 +1,7 @@
 import java.util.HashMap;
 public class inputInterpreter {
     private static inputInterpreter internalInterpreter;
-    private static HashMap<String,enumUserAction> meaningMap = new HashMap<String,enumUserAction>();
+    private static final HashMap<String,enumUserAction> meaningMap = new HashMap<String,enumUserAction>();
     public static enumUserAction interpret(String toInterpret){
         // this interprets the user input and, if it's found to be something outside of the possible commands,
         // returns an error state that prompts an error message to the user.

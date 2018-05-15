@@ -1,19 +1,15 @@
 import java.util.*;
-public class Duck extends DuckExperience {
-    protected String name = "your unnamed duck";
-    protected String cname = "Duck";
-    protected int length = 1;
-    protected int id = 0;
-    protected int sleepiness = 0; // if it gets to 100, game over
-    protected int hunger = 0; // if it gets to 100, game over
-    protected int intelligence = 0; // a desirable characteristic
-    protected int ego = 50; // if it gets to 100 or 0, game over
-    protected int cleanliness = 50; // if it gets to 0, game over
-    protected int happiness = 50; // if it gets to 0, game over
-    
-    public static void main(String[] args){
-	
-    }
+class Duck extends DuckExperience {
+    String name = "your unnamed duck";
+    String cname = "Duck";
+    private int length = 1;
+    int id = 0;
+    private int sleepiness = 0; // if it gets to 100, game over
+    private int hunger = 0; // if it gets to 100, game over
+    private int intelligence = 0; // a desirable characteristic
+    private int ego = 50; // if it gets to 100 or 0, game over
+    private int cleanliness = 50; // if it gets to 0, game over
+    private int happiness = 50; // if it gets to 0, game over
 
     public int getHappiness(){
         return happiness;
@@ -85,7 +81,7 @@ public class Duck extends DuckExperience {
     * of the duck.
     * @return void.
     */
-	 public String quackNormal(){
+    String quackNormal(){
        System.out.println("Quack! Quack! Says "
 			   +name+
 			  " of the "+cname+" class of ducks");
@@ -96,7 +92,7 @@ public class Duck extends DuckExperience {
 	/**
 	* Prints a message saying that the duck is flying.
 	*/
-    public String flyNormal(){
+    String flyNormal(){
     System.out.println("I am "
 			   +name+
 			  " of the "+cname+" and I can Fly!");
@@ -109,7 +105,7 @@ public class Duck extends DuckExperience {
     length = newlength;
     }
     
-    public int getLength(){
+    private int getLength(){
     	return length;
     }
     /**
@@ -119,7 +115,7 @@ public class Duck extends DuckExperience {
     public String toString(){
     return "I am a "+cname+". My name is " + name;
     }
-    class SortByLength implements Comparator<Duck>{
+    private class SortByLength implements Comparator<Duck>{
     public int compare(Duck a, Duck b){
     	if(a.getLength()<b.getLength()) return -1;
     	if(a.getLength()>b.getLength()) return 1;

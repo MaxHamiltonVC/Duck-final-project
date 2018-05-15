@@ -1,8 +1,5 @@
 
-public class DecoyDuck extends Duck{ 
-    public static void main(String[] args){
-	
-    }
+class DecoyDuck extends Duck{
     /**
     * Constructor. Creates a new duck with name equal to name.
     * @param name A string representing the name of this new duck.

@@ -1,19 +1,15 @@
-/**
- * Created by mhamilton on 5/8/18.
- */
 import java.util.Scanner;
 public class CleanState implements ProgramState{
-    int cleanInput = 0;
-    Duck programDuck;
-    inputInterpreter interpreter = inputInterpreter.getInstance();
-    Scanner inputGatherer = new Scanner(System.in);
+    private Duck programDuck;
+    final inputInterpreter interpreter = inputInterpreter.getInstance();
+    private final Scanner inputGatherer = new Scanner(System.in);
     // this represents the next state of the program (ie, where we're transitioning to after user input)
-    enumState nextState = enumState.CLEAN;
+    private enumState nextState = enumState.CLEAN;
     public CleanState(Duck duck){
         programDuck = duck;
     }
     public void interpretUserInput(String userInput){
-        enumUserAction processedInput = interpreter.interpret(userInput);
+        enumUserAction processedInput = inputInterpreter.interpret(userInput);
         switch(processedInput){
             case EDUCATE:
                 educate();
@@ -42,7 +38,7 @@ public class CleanState implements ProgramState{
             case RESTART:
                 System.out.println("Are you sure you want to restart the duck app with a whole new duck? "
                         + programDuck.getName()+" will be lost forever!");
-                if(interpreter.interpret(inputGatherer.next())==enumUserAction.YES){
+                if(inputInterpreter.interpret(inputGatherer.next())==enumUserAction.YES){
                     System.out.println("Restarting the duck app! Say goodbye to "+programDuck.getName()+"...");
                     restart();
                 }
@@ -60,7 +56,7 @@ public class CleanState implements ProgramState{
     public void takeUserInput(){
         System.out.println("How long would you like to clean for? (In minutes)");
         boolean improperInput = true;
-        cleanInput = 0;
+        int cleanInput = 0;
         String cleanStringInput = "";
         while(improperInput){
             try{

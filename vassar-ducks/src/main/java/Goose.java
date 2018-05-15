@@ -1,4 +1,4 @@
-public class Goose extends Duck{
+class Goose extends Duck{
     public Goose(String name){
 	this.name = name;
 	this.cname = "Goose";

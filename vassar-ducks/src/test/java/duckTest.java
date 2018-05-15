@@ -3,7 +3,7 @@ import org.junit.Test;
 
 public class duckTest{
 	// Testing a redhead duck
-	RedheadDuck redDuck = new RedheadDuck("Testy");
+    private final RedheadDuck redDuck = new RedheadDuck("Testy");
 	
 	@Test
 	public void redheadTest(){

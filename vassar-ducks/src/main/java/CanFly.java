@@ -1,3 +1,3 @@
-public interface CanFly{
-public String fly();
+interface CanFly{
+String fly();
 }

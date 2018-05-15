@@ -1,19 +1,15 @@
-/**
- * Created by mhamilton on 5/8/18.
- */
 import java.util.Scanner;
 public class DeathState implements ProgramState{
-    Duck programDuck;
-    inputInterpreter interpreter = inputInterpreter.getInstance();
-    String epitaph = "";
-    Scanner inputGatherer = new Scanner(System.in);
+    private Duck programDuck;
+    private final inputInterpreter interpreter = inputInterpreter.getInstance();
+    private final Scanner inputGatherer = new Scanner(System.in);
     // this represents the next state of the program (ie, where we're transitioning to after user input)
-    enumState nextState = enumState.DEATH;
+    private enumState nextState = enumState.DEATH;
     public DeathState(Duck duck){
         programDuck = duck;
     }
     public void interpretUserInput(String userInput){
-        enumUserAction processedInput = interpreter.interpret(userInput);
+        enumUserAction processedInput = inputInterpreter.interpret(userInput);
         switch(processedInput){
             case EDUCATE:
                 educate();
@@ -43,7 +39,7 @@ public class DeathState implements ProgramState{
                 System.out.println("Are you sure you want to restart the duck app with a whole new duck without"
                         + " writing an epitaph first? The memory of "
                         + programDuck.getName()+" will be lost forever!");
-                if(interpreter.interpret(inputGatherer.next())==enumUserAction.YES){
+                if(inputInterpreter.interpret(inputGatherer.next())==enumUserAction.YES){
                     System.out.println("Restarting the duck app! Say goodbye to "+programDuck.getName()+"...");
                     restart();
                 }
@@ -61,7 +57,7 @@ public class DeathState implements ProgramState{
     public void takeUserInput(){
         System.out.println("Alas, your duck is dead. Don't cry--even the best duck parents aren't perfect."
         +" To commemorate your duck's legacy, please enter an epitaph for them, to be stored forever:");
-        epitaph = inputGatherer.next();
+        String epitaph = inputGatherer.next();
         interpretUserInput(epitaph);
     }
 

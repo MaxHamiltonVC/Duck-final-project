@@ -1,18 +1,15 @@
-/**
- * Created by mhamilton on 5/8/18.
- */
 import java.util.Scanner;
 public class EducateState implements ProgramState{
-    Duck programDuck;
-    inputInterpreter interpreter = inputInterpreter.getInstance();
+    private Duck programDuck;
+    private final inputInterpreter interpreter = inputInterpreter.getInstance();
     // this represents the next state of the program (ie, where we're transitioning to after user input)
-    enumState nextState = enumState.EDUCATE;
-    Scanner inputGatherer = new Scanner(System.in);
+    private enumState nextState = enumState.EDUCATE;
+    private final Scanner inputGatherer = new Scanner(System.in);
     public EducateState(Duck duck){
         programDuck = duck;
     }
     public void interpretUserInput(String userInput){
-        enumUserAction processedInput = interpreter.interpret(userInput);
+        enumUserAction processedInput = inputInterpreter.interpret(userInput);
         switch(processedInput){
             case EDUCATE:
                 System.out.println("You're already teaching the duck!");
@@ -41,7 +38,7 @@ public class EducateState implements ProgramState{
             case RESTART:
                 System.out.println("Are you sure you want to restart the duck app with a whole new duck?"
                         + programDuck.getName()+" will be lost forever!");
-                if(interpreter.interpret(inputGatherer.next())==enumUserAction.YES){
+                if(inputInterpreter.interpret(inputGatherer.next())==enumUserAction.YES){
                     System.out.println("Restarting the duck app! Say goodbye to "+programDuck.getName()+"...");
                     restart();
                 }

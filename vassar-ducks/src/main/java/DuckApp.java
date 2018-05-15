@@ -1,5 +1,5 @@
 
-public class DuckApp{
+class DuckApp{
 public static void main(String[] args){
 	// This will keep track of whether our program's loop is still running
 	boolean programRunning = true;

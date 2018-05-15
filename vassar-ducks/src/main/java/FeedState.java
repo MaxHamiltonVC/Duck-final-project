@@ -1,20 +1,16 @@
-/**
- * Created by mhamilton on 5/8/18.
- */
 import java.util.Scanner;
 public class FeedState implements ProgramState{  
-    Duck programDuck;
-    int feedInput = 0;
-    inputInterpreter interpreter = inputInterpreter.getInstance();
+    private Duck programDuck;
+    private final inputInterpreter interpreter = inputInterpreter.getInstance();
     // this represents the next state of the program (ie, where we're transitioning to after user input)
-    enumState nextState = enumState.FEED;
-    Scanner inputGatherer = new Scanner(System.in);
+    private enumState nextState = enumState.FEED;
+    private final Scanner inputGatherer = new Scanner(System.in);
     
     public FeedState(Duck duck){
                 programDuck = duck;
     }
     public void interpretUserInput(String userInput){
-        enumUserAction processedInput = interpreter.interpret(userInput);
+        enumUserAction processedInput = inputInterpreter.interpret(userInput);
         switch(processedInput){
             case EDUCATE:
                 educate();
@@ -43,7 +39,7 @@ public class FeedState implements ProgramState{
             case RESTART:
                 System.out.println("Are you sure you want to restart the duck app with a whole new duck?"
                         + programDuck.getName()+" will be lost forever!");
-                if(interpreter.interpret(inputGatherer.next())==enumUserAction.YES){
+                if(inputInterpreter.interpret(inputGatherer.next())==enumUserAction.YES){
                     System.out.println("Restarting the duck app! Say goodbye to "+programDuck.getName()+"...");
                     restart();
                 }
@@ -60,7 +56,7 @@ public class FeedState implements ProgramState{
     public void takeUserInput(){        
         System.out.println("How many grams of food would you like to feed your duck?");
         boolean improperInput = true;
-        feedInput = 0;
+        int feedInput = 0;
         String sleepStringInput = "";
         while(improperInput){
             try{

@@ -1,8 +1,5 @@
 
-public class RedheadDuck extends Duck implements CanFly,CanQuack{ 
-    public static void main(String[] args){
-	
-    }
+public class RedheadDuck extends Duck implements CanFly,CanQuack{
     /**
     * Constructor. Creates a new duck with name equal to name.
     * @param name A string representing the name of this new duck.

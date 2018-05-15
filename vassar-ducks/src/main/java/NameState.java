@@ -4,17 +4,17 @@ import java.util.Scanner;
  * Created by mhamilton on 5/8/18.
  */
 public class NameState implements ProgramState {
-    Duck programDuck;
-    String duckName = "Ducky";
-    boolean unnamed = true;
-    inputInterpreter interpreter = inputInterpreter.getInstance();
+    private Duck programDuck;
+    private String duckName = "Ducky";
+    private boolean unnamed = true;
+    private final inputInterpreter interpreter = inputInterpreter.getInstance();
     // this represents the next state of the program (ie, where we're transitioning to after user input)
-    enumState nextState = enumState.NAME;
+    private enumState nextState = enumState.NAME;
     public NameState(Duck duck){
         programDuck = duck;
     }
     public void interpretUserInput(String userInput){
-        enumUserAction processedInput = interpreter.interpret(userInput);
+        enumUserAction processedInput = inputInterpreter.interpret(userInput);
         Scanner inputGatherer = new Scanner(System.in);
         switch(processedInput){
             case EDUCATE:
@@ -44,7 +44,7 @@ public class NameState implements ProgramState {
             case RESTART:
                 System.out.println("Are you sure you want to restart the duck app with a whole new duck? "
                         + programDuck.getName()+" will be lost forever!");
-                if(interpreter.interpret(inputGatherer.next())==enumUserAction.YES){
+                if(inputInterpreter.interpret(inputGatherer.next())==enumUserAction.YES){
                     System.out.println("Restarting the duck app! Say goodbye to "+programDuck.getName()+"...");
                     restart();
                 }

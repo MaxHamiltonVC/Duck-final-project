@@ -1,18 +1,15 @@
-/**
- * Created by mhamilton on 5/8/18.
- */
 import java.util.Scanner;
 public class MainState implements ProgramState {
-    Duck programDuck;
-    inputInterpreter interpreter = inputInterpreter.getInstance();
-    Scanner inputGatherer = new Scanner(System.in);
+    private Duck programDuck;
+    private final inputInterpreter interpreter = inputInterpreter.getInstance();
+    private final Scanner inputGatherer = new Scanner(System.in);
     // this represents the next state of the program (ie, where we're transitioning to after user input)
-    enumState nextState = enumState.MAIN;
+    private enumState nextState = enumState.MAIN;
     public MainState(Duck duck){
         programDuck = duck;
     }
     public void interpretUserInput(String userInput){
-        enumUserAction processedInput = interpreter.interpret(userInput);
+        enumUserAction processedInput = inputInterpreter.interpret(userInput);
         Scanner inputGatherer = new Scanner(System.in);
         switch(processedInput){
             case EDUCATE:
@@ -41,7 +38,7 @@ public class MainState implements ProgramState {
             case RESTART:
                 System.out.println("Are you sure you want to restart the duck app with a whole new duck? "
                         + programDuck.getName()+" will be lost forever!");
-                if(interpreter.interpret(inputGatherer.next())==enumUserAction.YES){
+                if(inputInterpreter.interpret(inputGatherer.next())==enumUserAction.YES){
                     System.out.println("Restarting the duck app! Say goodbye to "+programDuck.getName()+"...");
                     restart();
                 }
@@ -95,6 +92,6 @@ public class MainState implements ProgramState {
     public enumState getNextState(){
         return nextState;
     }
-    public void checkForDeath(){};
+    public void checkForDeath(){}
 }
 
