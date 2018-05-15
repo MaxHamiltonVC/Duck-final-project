@@ -82,6 +82,8 @@ public class ScoldState implements ProgramState {
         Scanner sc = new Scanner(System.in);
         String message = sc.nextLine();
         programDuck.setEgo(programDuck.getEgo() - (message.length()/5));
+        programDuck.setSleepiness(programDuck.getSleepiness()+12);
+        programDuck.setCleanliness(programDuck.getCleanliness()-10);
         if(programDuck.getEgo()<20){
             System.out.println(programDuck.getName() + " seems sad and dejected.");
         }

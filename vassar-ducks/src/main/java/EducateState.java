@@ -64,6 +64,7 @@ public class EducateState implements ProgramState{
         Scanner sc = new Scanner(System.in);
         String info = sc.nextLine();
         programDuck.setIntelligence(programDuck.getIntelligence() + 2);
+        programDuck.setEgo(programDuck.getEgo()+15);
         System.out.println(programDuck.getName() + " has learned about " + info);
         
         

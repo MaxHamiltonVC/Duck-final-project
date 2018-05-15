@@ -80,6 +80,7 @@ public class FeedState implements ProgramState{
 
     public void feed(int foodAmount){
         programDuck.setHunger(programDuck.getHunger() + foodAmount);
+        programDuck.setSleepiness(programDuck.getSleepiness()+10+(foodAmount/4));
         System.out.println(programDuck.getName() + " enjoyed the food!");
     }
     public void play(int playTime){

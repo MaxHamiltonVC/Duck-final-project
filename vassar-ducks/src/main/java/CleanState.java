@@ -89,6 +89,7 @@ public class CleanState implements ProgramState{
     }
     public void clean(int cleanTime){
         programDuck.setCleanliness(programDuck.getCleanliness() + cleanTime);
+        programDuck.setSleepiness(programDuck.getSleepiness()+10+(cleanTime/2));
         System.out.println(programDuck.getName() + " looks cleaner!");
         nextState = enumState.MAIN;
     }
