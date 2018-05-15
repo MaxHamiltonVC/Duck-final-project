@@ -20,6 +20,14 @@ public static void main(String[] args){
 		programRunning = (duckState.getNextState()!=enumState.EXIT); // checks if program should end
 	}
 }
+
+	/**
+	 *
+	 * @param currentState The current state of the program, which implements the ProgramState interface
+	 * @param newState the new state to be transitioned to, which implements the ProgramState interface
+	 * @param duck The duck that our program uses, which will be passed on to the new state.
+	 * @return The new ProgramState implementor, with the same duck that currentState had.
+	 */
 	private static ProgramState switchState(ProgramState currentState, enumState newState, Duck duck){
 		switch(newState){
 			case FEED:
