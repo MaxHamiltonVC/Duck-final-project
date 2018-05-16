@@ -1,0 +1,49 @@
+DUCK PARENTING APP
+USER MANUAL
+
+The duck parenting app works on much the same principle as a tamagotchi--
+you are charged with taking care of a duck & making sure that it stays
+healthy, clean, and level-headed.
+
+When you first start the app, you are prompted to name your new duck--
+note that you cannot name your duck after actions in the game (eg. feed,
+clean, scold), but any other valid sequences of characters are permitted.
+
+From here, you can choose many different fun and exciting activities to do
+withy our new duck. They are as follows:
+
+Clean: Cleaning your duck will increase its cleanliness, but tire it out.
+
+Educate: Educating your duck will increase its intelligence, but also
+increase its ego.
+
+Feed: Feeding your duck will decrease its hunger, at the cost of energy
+and cleanliness.
+
+Scold: You can scold your duck, decreasing its ego, but simultaneously
+decreasing its happiness. The power of your scolding is based on the length
+of your message to it.
+
+Sleep: You can sleep to decrease your duck's sleepiness, at the cost of its
+cleanliness.
+
+At any point, the user can exit the app or restart with a new duck.
+
+If the duck becomes too extreme on any given stat, it will die, and the user
+will be prompted to write an epitaph to it--this epitaph is not currently
+stored, but should hopefully make the user feel better and give some
+closure.
+
+This app generally relies on states to handle its behavior and simplify the general
+loop of the program, which only relies ultimately on four lines of code.
+It also makes use of a singleton class to interpret user input, allowing us to re-use
+a sizable hash map without having to constantly re-construct it.
+
+There are many features in this app that are currently not implemented as part
+of the parenting simulator, but remain in the app as artifacts of the previous
+duck project--such as the ability of the duck to fly, or the ID system.
+Future revisions would allow the user to pick a different kind of duck and have
+this decision matter, but the time frame made this unrealistic. Future revisions
+of this app could add a lot of functionality that makes these older features
+relevant (for example, the ID and duck data could be stored in a document, allowing
+the user to save their progress and pick up the app later).
