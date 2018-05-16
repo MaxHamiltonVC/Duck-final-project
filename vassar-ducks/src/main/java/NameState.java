@@ -100,6 +100,9 @@ public class NameState implements ProgramState {
     public void setType(String duckType){} //change to ENUM type?
 
     //Post-game-end states:
+    /**
+     * Exits the game. This is done by changing the next state to EXIT, which will end the loop in DuckApp.
+     */
     public void exit(){
         System.out.println("Exiting the duck parenting simulator...");
         nextState = enumState.EXIT;}
