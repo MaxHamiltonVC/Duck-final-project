@@ -61,6 +61,11 @@ public class ScoldState implements ProgramState {
         System.out.println(programDuck.getName() + " doesn't want to be fed right now!");
     }
 
+    /**
+     * This will print a message telling the user that this is not the right time to play, because this state
+     * is not one in which playing is allowed.
+     * @param playTime the amount of time to play for.
+     */
     public void play(int playTime){
         System.out.println("" + programDuck.name + " doesn't want to play right now!");
     }

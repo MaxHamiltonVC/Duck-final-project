@@ -61,6 +61,11 @@ public class MainState implements ProgramState {
     public void feed(int foodAmount){
         nextState = enumState.FEED;
     }
+
+    /**
+     * This will change the next state to the play state, regardless of the input.
+     * @param playTime the amount of time to play for.
+     */
     public void play(int playTime){
         nextState = enumState.PLAY;
     }

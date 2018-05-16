@@ -55,7 +55,15 @@ public class EducateState implements ProgramState{
     public void takeUserInput(){}
 
     public void feed(int foodAmount){}
-    public void play(int playTime){}
+
+    /**
+     * This will print a message telling the user that this is not the right time to play, because this state
+     * is not one in which playing is allowed.
+     * @param playTime the amount of time to play for.
+     */
+    public void play(int playTime){
+        System.out.println("It's not time to play--it's time to learn!");
+    }
     public void educate(){
         System.out.println("What would you like to teach your duck?");
         Scanner sc = new Scanner(System.in);
@@ -63,7 +71,7 @@ public class EducateState implements ProgramState{
         programDuck.setIntelligence(programDuck.getIntelligence() + 2);
         programDuck.setEgo(programDuck.getEgo()+15);
         System.out.println(programDuck.getName() + " has learned about " + info);
-        
+        nextState = enumState.MAIN;
         
     }
     public void clean(int cleanTime){}

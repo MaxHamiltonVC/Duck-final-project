@@ -74,13 +74,37 @@ public class SleepState implements ProgramState {
         nextState = enumState.MAIN;
 
     }
+    public void feed(int foodAmount){
+        System.out.println("You should finish sleeping before you do that.");
+    }
 
-    public void feed(int foodAmount){}
-    public void play(int playTime){}
+    /**
+     * This will print a message telling the user that this is not the right time to play, because this state
+     * is not one in which playing is allowed.
+     * @param playTime the amount of time to play for.
+     */
+    public void play(int playTime){
+        System.out.println("You should finish sleeping before you do that.");}
     public void educate(){}
-    public void clean(int cleanTime){}
-    public void sleep(int sleepTime){}
-    public void scold(){}
+    public void clean(int cleanTime) {
+        System.out.println("You should finish sleeping before you do that.");
+    }
+
+    /**
+     * sleeps for the inputted amount of time. This will decrease the duck's sleepiness, but increase
+     * its dirtiness and hunger.
+     * @param sleepTime the amount of time that programDuck will sleep for.
+     */
+    public void sleep(int sleepTime){
+        programDuck.setSleepiness(programDuck.getSleepiness()-sleepTime);
+        programDuck.setCleanliness(programDuck.getCleanliness() - 15);
+        programDuck.setHunger(programDuck.getHunger()+15);
+        programDuck.setHappiness(programDuck.getHappiness()+sleepTime);
+        System.out.println(programDuck.getName() + " slept for "+sleepTime+" hours!");
+        nextState = enumState.MAIN;
+    }
+    public void scold(){
+        System.out.println("You should finish sleeping before you do that.");}
 
     //Naming/creation states:
     public void setName(String duckName){}

@@ -79,6 +79,11 @@ public class FeedState implements ProgramState{
         programDuck.setSleepiness(programDuck.getSleepiness()+10+(foodAmount/4));
         System.out.println(programDuck.getName() + " enjoyed the food!");
     }
+    /**
+     * This will print a message telling the user that this is not the right time to play, because this state
+     * is not one in which playing is allowed.
+     * @param playTime the amount of time to play for.
+     */
     public void play(int playTime){
         System.out.println(programDuck.getName() + " doesn't want to play right now!");        
     }    

@@ -72,6 +72,11 @@ public class NameState implements ProgramState {
     public void feed(int foodAmount){
         System.out.println("You should name your duck before you try to do that.");
     }
+    /**
+     * This will print a message telling the user that this is not the right time to play, because this state
+     * is not one in which playing is allowed.
+     * @param playTime the amount of time to play for.
+     */
     public void play(int playTime){
         System.out.println("You should name your duck before you try to do that.");}
     public void educate(){
