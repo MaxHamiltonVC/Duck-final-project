@@ -49,11 +49,18 @@ public class DeathState implements ProgramState{
                 System.out.println("Educated, sleep, scold, clean, play, main, feed, exit, and restart.");
                 break;
             default:
-                System.out.println("Input not recognized. Type 'help' for a list of possible commands.");
+                System.out.println("Your epitaph has been recorded. Now restarting the duck app.");
+                restart();
                 break;
 
         }
     }
+
+    /**
+     * This dramatically prompts the user to write an epitaph. This epitaph is not currently stored, but would
+     * hopefully make the user feel better. In future revisions, a way to access these epitaphs, as well as
+     * statistics about past ducks, could be an interesting mechanic.
+     */
     public void takeUserInput(){
         System.out.println("Alas, your duck is dead. Don't cry--even the best duck parents aren't perfect."
         +" To commemorate your duck's legacy, please enter an epitaph for them, to be stored forever:");

@@ -53,6 +53,11 @@ public class ScoldState implements ProgramState {
 
         }
     }
+
+    /**
+     * Prompts the user for how much they would like to scold. This is generally messy & inconsistent with
+     * the rest of the states' behavior.
+     */
     public void takeUserInput(){
         interpretUserInput("scold");
     }

@@ -53,6 +53,11 @@ public class FeedState implements ProgramState{
                 break;
         }
     }
+
+    /**
+     * Prompts the user to input an amount of food. If the amount is not proper, it will loop back after giving
+     * an appropriate error message.
+     */
     public void takeUserInput(){        
         System.out.println("How many grams of food would you like to feed your duck?");
         boolean improperInput = true;

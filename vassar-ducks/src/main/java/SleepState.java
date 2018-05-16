@@ -53,6 +53,12 @@ public class SleepState implements ProgramState {
 
         }
     }
+
+    /**
+     * Takes user input. This will wait for a proper input, and once it gets it, will sleep for that time.
+     * If we don't get input that's sleep-appropriate (that is, an integer), then we will try to do
+     * what the user wants and print out an error message as a result.
+     */
     public void takeUserInput(){
         System.out.println("How long would you like to sleep for?");
         boolean improperInput = true;

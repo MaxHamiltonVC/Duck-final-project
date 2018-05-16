@@ -60,6 +60,12 @@ public class NameState implements ProgramState {
 
         }
     }
+
+    /**
+     * This will wait for user input. It will give an error if the input is a command rather than a name
+     * (So you cannot name your duck "feed," for example.)
+     * Once an appropriate input is received, it will set that to be the duck's name and move on to the mains state.
+     */
     public void takeUserInput(){
         System.out.println("Welcome to the duck parenting simulator. What would you like to name your duck?");
         Scanner inputGatherer = new Scanner(System.in);

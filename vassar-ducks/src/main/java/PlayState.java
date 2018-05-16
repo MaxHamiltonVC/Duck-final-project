@@ -59,6 +59,12 @@ public class PlayState implements ProgramState {
                 break;
         }
     }
+
+    /**
+     * Prompts the user for how much they would like to play for. If the input is inappropriate (not an integer)
+     * then it will try to do their action, print out an error or help message appropriate to what they were
+     * trying to do, and then continue with the loop and re-prompt for a more appropriate input.
+     */
     public void takeUserInput(){
         System.out.println("How long would you like to play with your duck? (In minutes)");
         boolean improperInput = true;

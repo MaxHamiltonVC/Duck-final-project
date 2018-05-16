@@ -52,7 +52,14 @@ public class EducateState implements ProgramState{
                 break;
         }
     }
-    public void takeUserInput(){}
+
+    /**
+     * This will automatically call the educate function (this should be restructured, ideally, to be more in-line
+     * with the way it's handled in other states).
+     */
+    public void takeUserInput(){
+        educate();
+    }
 
     public void feed(int foodAmount){}
 

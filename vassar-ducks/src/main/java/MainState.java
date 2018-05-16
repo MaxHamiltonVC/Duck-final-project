@@ -53,6 +53,11 @@ public class MainState implements ProgramState {
 
         }
     }
+
+    /**
+     * This will prompt the user for an input of what they would like to do, and then interpret that input
+     * accordingly with the interpretUserInput function.
+     */
     public void takeUserInput(){
         System.out.println("What would you like to do with your duck?");
         interpretUserInput(inputGatherer.next());

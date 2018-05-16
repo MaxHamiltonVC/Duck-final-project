@@ -53,6 +53,11 @@ public class CleanState implements ProgramState{
 
         }
     }
+
+    /**
+     * This prompts the user to input an integer representing how much they'd like to clean their duck. If
+     * the input is improper (not an integer), then they will be re-prompted with an appropriate error message.
+     */
     public void takeUserInput(){
         System.out.println("How long would you like to clean for? (In minutes)");
         boolean improperInput = true;
