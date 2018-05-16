@@ -85,6 +85,9 @@ public class NameState implements ProgramState {
         System.out.println("You should name your duck before you try to do that.");}
     public void sleep(int sleepTime){
         System.out.println("You should name your duck before you try to do that.");}
+    /**
+     * Prints a message informing the user that this is not a state in which the duck can be scolded.
+     */
     public void scold(){
         System.out.println("You should name your duck before you try to do that.");}
 

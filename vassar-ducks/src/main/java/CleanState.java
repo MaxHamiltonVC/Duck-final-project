@@ -97,6 +97,9 @@ public class CleanState implements ProgramState{
     public void sleep(int sleepTime){
         System.out.println(programDuck.getName() + " doesn't want to sleep in their filth!");
     }
+    /**
+     * Prints a message informing the user that this is not a state in which the duck can be scolded.
+     */
     public void scold(){
         System.out.println(programDuck.getName() + " can't hear you because their ears are COVERED in filth!");
     }

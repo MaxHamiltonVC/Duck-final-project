@@ -103,6 +103,10 @@ public class SleepState implements ProgramState {
         System.out.println(programDuck.getName() + " slept for "+sleepTime+" hours!");
         nextState = enumState.MAIN;
     }
+
+    /**
+     * Prints a message informing the user that this is not a state in which the duck can be scolded.
+     */
     public void scold(){
         System.out.println("You should finish sleeping before you do that.");}
 

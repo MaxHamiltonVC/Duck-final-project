@@ -78,6 +78,10 @@ public class MainState implements ProgramState {
     public void sleep(int sleepTime){
         nextState = enumState.SLEEP;
     }
+
+    /**
+     * Changes nextState to be the scold state.
+     */
     public void scold(){
         nextState = enumState.SCOLD;
     }

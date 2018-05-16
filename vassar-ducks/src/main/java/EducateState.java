@@ -76,7 +76,12 @@ public class EducateState implements ProgramState{
     }
     public void clean(int cleanTime){}
     public void sleep(int sleepTime){}
-    public void scold(){}
+    /**
+     * Prints a message informing the user that this is not a state in which the duck can be scolded.
+     */
+    public void scold(){
+        System.out.println("Finish educating your duck before you scold them!");
+    }
 
     //Naming/creation states:
     public void setName(String duckName){}

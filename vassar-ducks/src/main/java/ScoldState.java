@@ -78,6 +78,12 @@ public class ScoldState implements ProgramState {
     public void sleep(int sleepTime){
         System.out.println("" + programDuck.name + " doesn't want to sleep right now!");
     }
+
+    /**
+     * Takes input through the use of a scanner, asking for how much to scold.
+     * Scolding decreases a duck's ego, but it also has negative consequences (sleepiness and a loss of
+     * cleanliness.)
+     */
     public void scold(){
         System.out.println("What would you like to say to scold your duck?");
         // the harshness of the scolding is based on the length of the message.

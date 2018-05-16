@@ -78,6 +78,10 @@ public class DeathState implements ProgramState{
                 " is dead. You clean them, but it doesn't bring them back.");}
     public void sleep(int sleepTime){
         System.out.println(programDuck.getName() + " is dead. They're sleeping forever now, in a way.");}
+
+    /**
+     * Prints a message informing the user that this is not a state in which the duck can be scolded.
+     */
     public void scold(){
         System.out.println(programDuck.getName() + " is dead. Haven't they suffered enough?");}
 
