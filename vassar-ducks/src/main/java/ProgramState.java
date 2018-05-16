@@ -13,7 +13,6 @@ interface ProgramState {
     void scold();
 
     //Naming/creation states:
-    void setName(String duckName);
     void setType(String duckType); //change to ENUM type?
 
     //Post-game-end states:

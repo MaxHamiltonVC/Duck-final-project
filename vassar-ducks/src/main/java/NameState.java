@@ -92,6 +92,11 @@ public class NameState implements ProgramState {
         System.out.println("You should name your duck before you try to do that.");}
 
     //Naming/creation states:
+
+    /**
+     * Changes the name of our duck.
+     * @param duckName the new name for our duck to have.
+     */
     public void setName(String duckName){
         programDuck.setName(duckName);
         System.out.println("Done! Your duck's name is now "+duckName+".");
@@ -110,9 +115,21 @@ public class NameState implements ProgramState {
         nextState = enumState.NAME;
         programDuck = new Duck();}
 
+    /**
+     * This returns our next state, so that DuckApp can figure out where to go next in its loop.
+     * @return the next state, one of the states enumerated by enumState.
+     */
     public enumState getNextState(){
         return nextState;
     }
+    /**
+     * Checks if the duck has died. The thing that could go wrong:
+     * Duck is too dirty
+     * Duck has too big or too small of an ego
+     * Duck is too sleepy
+     * Duck is too hungry
+     * Duck is too unhappy
+     */
     public void checkForDeath(){
         if(programDuck.getEgo()<0||programDuck.getEgo()>100||programDuck.getCleanliness()<0
                 ||programDuck.getHappiness()<0||programDuck.getHunger()>100||programDuck.getSleepiness()>100){

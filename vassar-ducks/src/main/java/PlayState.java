@@ -100,10 +100,6 @@ public class PlayState implements ProgramState {
         System.out.println(programDuck.getName() + " won't listen right now!");
     }
 
-    //Naming/creation states:
-    public void setName(String duckName){
-        System.out.println("You can't do that right now!");
-    }
     public void setType(String duckType){ //change to ENUM type?
         System.out.println("You can't do that right now!");
     }
@@ -119,9 +115,21 @@ public class PlayState implements ProgramState {
             nextState = enumState.NAME;
             programDuck = new Duck();}
 
+    /**
+     * This returns our next state, so that DuckApp can figure out where to go next in its loop.
+     * @return the next state, one of the states enumerated by enumState.
+     */
     public enumState getNextState(){
             return nextState;
     }
+    /**
+     * Checks if the duck has died. The thing that could go wrong:
+     * Duck is too dirty
+     * Duck has too big or too small of an ego
+     * Duck is too sleepy
+     * Duck is too hungry
+     * Duck is too unhappy
+     */
     public void checkForDeath(){
         if(programDuck.getEgo()<0||programDuck.getEgo()>100||programDuck.getCleanliness()<0
                 ||programDuck.getHappiness()<0||programDuck.getHunger()>100||programDuck.getSleepiness()>100){
